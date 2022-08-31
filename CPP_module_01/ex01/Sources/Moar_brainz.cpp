@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Moar_brainz.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#include "Moar_brainz.hpp"
+#include "Zombie.class.hpp"
 
-int		main(int argc, char **argv){
+int		main(void)
+{
+	std::string		number;
+	std::string		name;
 
+	std::cout << "number of Zombie >" ;
+	std::getline(std::cin, number);
+	std::cout << "name of Zombie >" ;
+	std::getline(std::cin, name);
 
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		while (++argv && *argv)
-		{
-			for (char *str = *argv; *str != '\0'; str++)
-				*str = std::toupper(*str);
-			std::cout << *argv << " ";
-		}
-		std::cout << std::endl;
-	}
-	return (0);
+	Zombie *new_Zombie = zombieHorde( std::atoi(number.c_str()), name );
+	
+	for(int i = 0; i < std::atoi(number.c_str()); i++)
+	new_Zombie->announce();
+	delete []new_Zombie;
 }
+	

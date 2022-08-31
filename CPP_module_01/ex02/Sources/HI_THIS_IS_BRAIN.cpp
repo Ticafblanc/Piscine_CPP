@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*   HI THIS IS BRAIN.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,22 +11,18 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
+#include <string>
 
-int		main(int argc, char **argv){
+int main()
+{
+	std::string string("HI THIS IS BRAIN");
+	std::string* stringPTR = &string;
+	std::string& stringREF = string;
 
-
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		while (++argv && *argv)
-		{
-			for (char *str = *argv; *str != '\0'; str++)
-				*str = std::toupper(*str);
-			std::cout << *argv << " ";
-		}
-		std::cout << std::endl;
-	}
-	return (0);
+	std::cout << "The memory address of the string variable: " << &string << std::endl;
+	std::cout << "The memory address held by stringPTR: " << stringPTR << std::endl;
+	std::cout << "The memory address held by stringREF: " << &stringREF << std::endl;
+	std::cout << "The value of the string variable: "<< string << std::endl;
+	std::cout << "The value pointed to by stringPTR: " << *stringPTR << std::endl;
+	std::cout << "The value pointed to by stringREF: " << stringREF << std::endl;
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Sed_is_for_losers.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SED_IS_FOR_LOSERS_HPP
+# define SED_IS_FOR_LOSERS_HPP
+
 #include <iostream>
-#include <cstring>
+#include <string>
+#include <fstream>
 
-int		main(int argc, char **argv){
 
-
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		while (++argv && *argv)
-		{
-			for (char *str = *argv; *str != '\0'; str++)
-				*str = std::toupper(*str);
-			std::cout << *argv << " ";
-		}
-		std::cout << std::endl;
-	}
-	return (0);
-}
+#endif

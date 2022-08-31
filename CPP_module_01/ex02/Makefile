@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = Account
+PROJECT = HI_THIS_IS_BRAIN
 
 	#  BINARY  #
 
@@ -19,12 +19,6 @@ BIN_PATH = Bin/
 BIN_NAME = $(PROJECT)
 
 BIN = $(addprefix $(BIN_PATH),$(BIN_NAME))
-
-	#  INCLUDES  #
-
-INC_PATH = ./Includes
-
-INC_FLAGS = -I $(INC_PATH)
 
 	#  SOURCES  #
 
@@ -81,7 +75,7 @@ all: $(BIN)
 		@echo $(GREEN) Compilation $(PROJECT) is completed !!
 
 $(OBJ_PATH)%.o:$(SRC_PATH)%.cpp
-		@$(CC) $(CC_FLAGS) $(INC_FLAGS) -c $< -o $@
+		@$(CC) $(CC_FLAGS) -c $< -o $@
 		@echo $(BLUE) $(notdir $@) is created !!
 
 $(BIN): title directory $(OBJ)
@@ -89,7 +83,7 @@ $(BIN): title directory $(OBJ)
 		@echo $(BLUE) $(notdir $(BIN)) is created !!
 
 run: all
-		@./$(BIN_PATH)$(BIN_NAME)
+		@./$(BIN_PATH)$(BIN_NAME) "$${INP}"
 
 title: 
 		@echo $(GREEN)******************$(PROJECT)******************

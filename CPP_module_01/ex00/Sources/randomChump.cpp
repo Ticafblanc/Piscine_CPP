@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#include "BraiiiiiiinnnzzzZ.hpp"
+#include "Zombie.class.hpp"
 
-int		main(int argc, char **argv){
+void	randomChump( std::string name ){
 
+	Zombie random_Zombie(name);
 
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		while (++argv && *argv)
-		{
-			for (char *str = *argv; *str != '\0'; str++)
-				*str = std::toupper(*str);
-			std::cout << *argv << " ";
-		}
-		std::cout << std::endl;
-	}
-	return (0);
+	random_Zombie.announce();
 }

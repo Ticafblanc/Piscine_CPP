@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Replace.class.hpp        			                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#ifndef REPLACE_CLASS_HPP
+# define REPLACE_CLASS_HPP
 
-int		main(int argc, char **argv){
+#include "Sed_is_for_losers.hpp"
 
 
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		while (++argv && *argv)
-		{
-			for (char *str = *argv; *str != '\0'; str++)
-				*str = std::toupper(*str);
-			std::cout << *argv << " ";
-		}
-		std::cout << std::endl;
-	}
-	return (0);
-}
+
+#endif

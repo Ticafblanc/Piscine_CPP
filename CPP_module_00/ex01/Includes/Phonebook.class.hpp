@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,34 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_CLASS_HPP
+# define PHONEBOOK_CLASS_HPP
+
 #include "My_Awesome_Phonebook.hpp"
 #include "Contact.class.hpp"
-#include "Phonebook.class.hpp"
 
-int		main(void){
+class Phonebook{
 
-	Phonebook	repertoire;
-	std::string	input;
+	public:
+		
+		Phonebook(void);
+		void		add(void);
+		void		search(void);
+		void		print(int trig);
 
-	std::cout << "My awesome phonebook is open" << std::endl;
-	while (input != "EXIT")
-	{
-		std::cout << "enter your command: ";
-		std::getline(std::cin, input);
-		if (input == "SEARCH")
-			repertoire.search();
-		else if(input == "ADD")
-			repertoire.add();
-		else if (input == "EXIT")
-			break;
-		else
-		{
-			std::cout << "command invalide !!" << std::endl;
-			std::cout << "usage: \tSEARCH to browse your contacts," << std::endl
-				<< "\tADD to add one, " << std::endl
-				<< "\tEXIT to leave" << std::endl;
-		}
-		repertoire.print(-1);
-	}
-	std::cout << "My awesome phonebook is close" << std::endl;
-}
+
+	private:
+
+		std::string	_header[5];
+		int			_nb_contact;
+		Contact	*_repertoire[8];
+		Contact	_contact0;
+		Contact	_contact1;
+		Contact	_contact2;
+		Contact	_contact3;
+		Contact	_contact4;
+		Contact	_contact5;
+		Contact	_contact6;
+		Contact	_contact7;
+};
+#endif

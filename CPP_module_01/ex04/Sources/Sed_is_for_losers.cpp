@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Sed_is_for_losers.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
-
-int		main(int argc, char **argv){
+#include "Replace.class.hpp"
+#include "Sed_is_for_losers.hpp"
 
 
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
+int main(int argc, char **argv)
+{
+	if (argc == 4)
 	{
-		while (++argv && *argv)
-		{
-			for (char *str = *argv; *str != '\0'; str++)
-				*str = std::toupper(*str);
-			std::cout << *argv << " ";
-		}
-		std::cout << std::endl;
+		std::string filename(argv[1]);
+		std::string s1(argv[2]);
+		std::string s2(argv[3]);
+		
+		std::ifstream ifs(filename);
+
 	}
-	return (0);
+	else
+		std::cout << "Argument invalide" << std::endl;
 }
+	

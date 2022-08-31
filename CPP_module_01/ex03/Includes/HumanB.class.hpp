@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*   HumanB.class.hpp        			                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#ifndef HUMANB_CLASS_HPP
+# define HUMANB_CLASS_HPP
 
-int		main(int argc, char **argv){
+#include "Unnecessary_violence.hpp"
+#include "Weapon.class.hpp"
 
+class HumanB{
+	public:
+		
+		HumanB(std::string name);
+		~HumanB(void);
+		void setWeapon(Weapon& weapon);
+		void attack(void) const;
 
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		while (++argv && *argv)
-		{
-			for (char *str = *argv; *str != '\0'; str++)
-				*str = std::toupper(*str);
-			std::cout << *argv << " ";
-		}
-		std::cout << std::endl;
-	}
-	return (0);
-}
+	private:
+
+		std::string _name;
+		Weapon* _weapon;
+};
+
+#endif

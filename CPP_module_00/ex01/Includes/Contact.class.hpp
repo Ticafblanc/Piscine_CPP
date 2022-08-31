@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Contact.class.hpp      			                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,34 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
+
 #include "My_Awesome_Phonebook.hpp"
-#include "Contact.class.hpp"
-#include "Phonebook.class.hpp"
 
-int		main(void){
+enum	e_contact{
 
-	Phonebook	repertoire;
-	std::string	input;
+	FIRST_NAME = 0,
+	LAST_NAME= 1,
+	NICKNAME = 2,
+	PHONE_NUMBER = 3,
+	DARKEST_SECRET = 4,
+};
 
-	std::cout << "My awesome phonebook is open" << std::endl;
-	while (input != "EXIT")
-	{
-		std::cout << "enter your command: ";
-		std::getline(std::cin, input);
-		if (input == "SEARCH")
-			repertoire.search();
-		else if(input == "ADD")
-			repertoire.add();
-		else if (input == "EXIT")
-			break;
-		else
-		{
-			std::cout << "command invalide !!" << std::endl;
-			std::cout << "usage: \tSEARCH to browse your contacts," << std::endl
-				<< "\tADD to add one, " << std::endl
-				<< "\tEXIT to leave" << std::endl;
-		}
-		repertoire.print(-1);
-	}
-	std::cout << "My awesome phonebook is close" << std::endl;
-}
+class Contact{
+
+	public:
+
+		void	add(void);
+		void	print(int id);
+
+	private:
+
+		std::string	_contact[5];
+};
+
+#endif

@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = Account
+PROJECT = Moar_brainz
 
 	#  BINARY  #
 
@@ -89,7 +89,7 @@ $(BIN): title directory $(OBJ)
 		@echo $(BLUE) $(notdir $(BIN)) is created !!
 
 run: all
-		@./$(BIN_PATH)$(BIN_NAME)
+		@./$(BIN_PATH)$(BIN_NAME) "$${INP}"
 
 title: 
 		@echo $(GREEN)******************$(PROJECT)******************

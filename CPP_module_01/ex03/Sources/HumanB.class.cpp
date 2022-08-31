@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*   HumanB.class.hpp        			                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#include "HumanB.class.hpp"
 
-int		main(int argc, char **argv){
+HumanB::HumanB(std::string name) : _name(name){}
 
+HumanB::~HumanB(void){}
 
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+void HumanB::setWeapon(Weapon& weapon){
+	
+	this->_weapon = &weapon;
+}
+
+void HumanB::attack(void) const{
+	
+	std::cout << this->_name << " attacks with his ";
+	if (this->_weapon)
+		std::cout << this->_weapon->getType();
 	else
-	{
-		while (++argv && *argv)
-		{
-			for (char *str = *argv; *str != '\0'; str++)
-				*str = std::toupper(*str);
-			std::cout << *argv << " ";
-		}
-		std::cout << std::endl;
-	}
-	return (0);
+		std::cout << "bare fists";
+	std::cout << std::endl;
 }
