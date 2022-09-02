@@ -28,17 +28,17 @@ INC_FLAGS = -I $(INC_PATH)
 
 	#  SOURCES  #
 
-SRC_PATH = Sources/
+TTTTTT_PATH = Sources/
 
-SRC_NAME = $(notdir $(wildcard Sources/*.cpp))
+TTTTTT_NAME = $(notdir $(wildcard Sources/*.cpp))
 
-SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
+TTTTTT = $(addprefix $(TTTTTT_PATH),$(TTTTTT_NAME))
 
 	#  OBJECTS  #
 
 OBJ_PATH = $(BIN_PATH)Objects/
 
-OBJ_NAME = $(SRC_NAME:.cpp=.o)
+OBJ_NAME = $(TTTTTT_NAME:.cpp=.o)
 
 OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
 	
@@ -80,7 +80,7 @@ BLU = \033[1;34m
 all: $(BIN) 
 		@echo $(GREEN) Compilation $(PROJECT) is completed !!
 
-$(OBJ_PATH)%.o:$(SRC_PATH)%.cpp
+$(OBJ_PATH)%.o:$(TTTTTT_PATH)%.cpp
 		@$(CC) $(CC_FLAGS) $(INC_FLAGS) -c $< -o $@
 		@echo $(BLUE) $(notdir $@) is created !!
 
@@ -89,9 +89,7 @@ $(BIN): title directory $(OBJ)
 		@echo $(BLUE) $(notdir $(BIN)) is created !!
 
 run: all
-		@read -p "function argument: " INP; \
-		./$(BIN_PATH)$(BIN_NAME) $$INP; \
-		diff test .replace 
+		@./$(BIN_PATH)$(BIN_NAME) "$${INP}"
 
 title: 
 		@echo $(GREEN)******************$(PROJECT)******************

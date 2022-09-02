@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.class.hpp        			                :+:      :+:    :+:   */
+/*   Premiers_pas_vers_une_classe_utile.cpp             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,25 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_CLASS_HPP
-# define REPLACE_CLASS_HPP
+#include "Fixed.class.hpp"
+#include "Premiers_pas_vers_une_classe_utile.hpp"
 
-#include "Sed_is_for_losers.hpp"
 
-class Replace
-{
-private:
+int main( void ) {
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
 
-    std::string _s1;//to find
-    std::string _s2;//to replace
+	a = Fixed( 1234.4321f );
 
-public:
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
 
-    Replace(std::string s1, std::string s2);
-    ~Replace();
-
-    void    find_rep(std::string &buf)const;
-
-};
-
-#endif
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	return 0;
+}

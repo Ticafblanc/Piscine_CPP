@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.class.hpp        			                :+:      :+:    :+:   */
+/*   Harl_2.0.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,25 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_CLASS_HPP
-# define REPLACE_CLASS_HPP
+#ifndef HARL_2_0_HPP
+# define HARL_2_0_HPP
 
-#include "Sed_is_for_losers.hpp"
+#include <iostream>
+#include <string>
+#include <map>
 
-class Replace
-{
-private:
-
-    std::string _s1;//to find
-    std::string _s2;//to replace
-
-public:
-
-    Replace(std::string s1, std::string s2);
-    ~Replace();
-
-    void    find_rep(std::string &buf)const;
-
-};
 
 #endif

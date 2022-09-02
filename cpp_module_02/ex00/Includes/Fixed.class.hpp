@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.class.hpp        			                :+:      :+:    :+:   */
+/*   Fixed.class.hpp         			                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_CLASS_HPP
-# define REPLACE_CLASS_HPP
+#ifndef FIXED_CLASS_HPP
+# define FIXED_CLASS_HPP
 
-#include "Sed_is_for_losers.hpp"
+#include "Mon_premier_canon.hpp"
 
-class Replace
+class Fixed
 {
-private:
+    private:
 
-    std::string _s1;//to find
-    std::string _s2;//to replace
+    	int					_RawBits;
+	    static int const	_nb_Bits_fractional;
 
-public:
+    public:
 
-    Replace(std::string s1, std::string s2);
-    ~Replace();
-
-    void    find_rep(std::string &buf)const;
+	    Fixed(void);
+	    Fixed(Fixed const & rhs);
+        Fixed & operator=(Fixed const & rhs);
+	    ~Fixed();
+        int		getRawBits(void) const;
+    	void	setRawBits(int const raw);
 
 };
 

@@ -18,14 +18,38 @@ int main(int argc, char **argv)
 {
 	if (argc == 4)
 	{
-		std::string filename(argv[1]);
-		std::string s1(argv[2]);
-		std::string s2(argv[3]);
-		
-		std::ifstream ifs(filename);
-
+		std::string	infile(argv[1]);
+		if (infile == ".replace")
+		{
+			std::cout << ".replace infile invalide" << std::endl;
+			return 1;
+		}
+		std::ifstream ifs(infile);
+		if (!ifs.good())
+		{
+			std::cout << infile;
+			std::perror("infile :");
+			std::cout << std::endl;
+			return 1;
+		}
+		Replace	rep(argv[2], argv[3]);
+		std::string	line;
+		std::ofstream ofs(".replace");
+		while (getline(ifs, line).good())
+		{
+			rep.find_rep(line);
+			ofs << line << std::endl;
+		}
+		rep.find_rep(line);
+		ofs << line;
+		ifs.close();
+		ofs.close();
 	}
 	else
+	{
 		std::cout << "Argument invalide" << std::endl;
+		std::cout << "Usage : 'infile(no '.replace')' 'str to find' 'str to replace'" << std::endl;
+	}
+	return 0;
 }
 	

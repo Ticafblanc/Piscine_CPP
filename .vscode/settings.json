@@ -56,6 +56,12 @@
         "cmath": "cpp",
         "numeric": "cpp",
         "random": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "fstream": "cpp",
+        "stack": "cpp",
+        "__node_handle": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "optional": "cpp"
     }
 }

@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = Sed_is_for_losers
+PROJECT = Harl_2.0
 
 	#  BINARY  #
 
@@ -89,9 +89,7 @@ $(BIN): title directory $(OBJ)
 		@echo $(BLUE) $(notdir $(BIN)) is created !!
 
 run: all
-		@read -p "function argument: " INP; \
-		./$(BIN_PATH)$(BIN_NAME) $$INP; \
-		diff test .replace 
+		@./$(BIN_PATH)$(BIN_NAME)
 
 title: 
 		@echo $(GREEN)******************$(PROJECT)******************

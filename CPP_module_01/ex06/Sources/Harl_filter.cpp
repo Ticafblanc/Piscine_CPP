@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.class.hpp        			                :+:      :+:    :+:   */
+/*   Harl_filter.cpp      			                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,25 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_CLASS_HPP
-# define REPLACE_CLASS_HPP
+#include "Harl.class.hpp"
+#include "Harl_filter.hpp"
 
-#include "Sed_is_for_losers.hpp"
 
-class Replace
+int main(int argc, char **argv)
 {
-private:
+	if (argc != 2)
+		return 0;
+	
+	std::string	cpl(argv[1]);
+	if (cpl == "INFO" || cpl == "DEBUG" || cpl == "WARNING" || cpl == "ERROR")
+	{
 
-    std::string _s1;//to find
-    std::string _s2;//to replace
+		Harl	harl;
 
-public:
-
-    Replace(std::string s1, std::string s2);
-    ~Replace();
-
-    void    find_rep(std::string &buf)const;
-
-};
-
-#endif
+		std::map<std::string, int>    m;
+   		m["INFO"] = 1;
+    	m["DEBUG"] = 2;
+   		m["WARNING"] = 3;
+    	m["ERROR"] = 4;
+		harl.complain(m[argv[1]]);
+	}
+	return 0;
+}
+	

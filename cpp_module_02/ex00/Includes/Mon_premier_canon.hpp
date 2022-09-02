@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.class.hpp        			                :+:      :+:    :+:   */
+/*   Mon_premier_canon.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,25 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_CLASS_HPP
-# define REPLACE_CLASS_HPP
+#ifndef MON_PRIMIER_CANON_HPP
+# define MON_PRIMIER_CANON_HPP
 
-#include "Sed_is_for_losers.hpp"
+#include <iostream>
+#include <string>
 
-class Replace
-{
-private:
-
-    std::string _s1;//to find
-    std::string _s2;//to replace
-
-public:
-
-    Replace(std::string s1, std::string s2);
-    ~Replace();
-
-    void    find_rep(std::string &buf)const;
-
-};
 
 #endif

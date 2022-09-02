@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = Sed_is_for_losers
+PROJECT = Premiers_pas_vers_une_classe_utile
 
 	#  BINARY  #
 
@@ -89,10 +89,7 @@ $(BIN): title directory $(OBJ)
 		@echo $(BLUE) $(notdir $(BIN)) is created !!
 
 run: all
-		@read -p "function argument: " INP; \
-		./$(BIN_PATH)$(BIN_NAME) $$INP; \
-		diff test .replace 
-
+		@./$(BIN_PATH)$(BIN_NAME) 
 title: 
 		@echo $(GREEN)******************$(PROJECT)******************
 
