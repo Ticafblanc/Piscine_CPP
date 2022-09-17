@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-#include "Premiers_pas_vers_une_classe_utile.hpp"
+#include <iostream>
+#include <string>
+#include <cmath>
 
 class Fixed
 {
@@ -25,14 +27,42 @@ class Fixed
     public:
 
 	    Fixed(void);
-	    Fixed(Fixed const & rhs);
-        Fixed & operator=(Fixed const & rhs);
-	    ~Fixed();
+		Fixed(int const in);
+		Fixed(float const floa);
+		Fixed(Fixed const & rhs);
+		~Fixed(void);
+
+        
+
+		bool operator>(Fixed const & rhs) const;		
+		bool operator<(Fixed const & rhs) const;	
+		bool operator>=(Fixed const & rhs) const;		
+		bool operator<=(Fixed const & rhs) const;		
+		bool operator==(Fixed const & rhs) const;		
+		bool operator!=(Fixed const & rhs) const;		
+
+		Fixed & operator=(Fixed const & rhs);
+
+		Fixed operator+(Fixed const & rhs) const;		
+		Fixed operator-(Fixed const & rhs) const;		
+		Fixed operator*(Fixed const & rhs) const;	
+		Fixed operator/(Fixed const & rhs) const;		
+
+		Fixed & operator++();					
+		Fixed & operator--();					
+		Fixed operator++(int);				
+		Fixed operator--(int);					
+
+		const static Fixed	&	min(Fixed & a, Fixed & b);
+		static Fixed const	& min(Fixed const & a, Fixed const & b);
+		static Fixed	&	max(Fixed & a, Fixed & b);
+		static Fixed const	& max(Fixed const & a, Fixed const & b);
+
+	   
         int		getRawBits(void) const;
     	void	setRawBits(int const raw);
 
-		Fixed(int const in);
-		Fixed(float const floa);
+		
 		float toFloat(void) const;
 		int toInt(void) const;
 

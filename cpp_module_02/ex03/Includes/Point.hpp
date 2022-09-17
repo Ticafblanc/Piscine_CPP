@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Premiers_pas_vers_une_classe_utile.hpp             :+:      :+:    :+:   */
+/*   Point.hpp         					                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,12 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PREMIER_PAS_VERS_UNE_CLASSE_UTILE_HPP
-# define PREMIER_PAS_VERS_UNE_CLASSE_UTILE_HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
-#include <iostream>
-#include <string>
-#include <cmath>
+#include "Fixed.hpp"
 
+
+class Point
+{
+	private:
+
+		Fixed const _x;
+		Fixed const _y;	
+
+	public:
+
+		Point(void);
+		Point(const float x, const float y);
+		Point(const Point& copy);
+		~Point(void);
+
+
+		Point& operator=(const Point& rhs);
+
+		Fixed const getX(void) const;
+		Fixed const getY(void) const;
+};
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
