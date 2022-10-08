@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Moar_brainz.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,20 @@
 
 #include "Zombie.hpp"
 
-Zombie* newZombie( std::string name ){
+int		main(void)
+{
+	std::string		number;
+	std::string		name;
 
-	return new Zombie(name);
+	std::cout << "number of Zombie >" ;
+	std::getline(std::cin, number);
+	std::cout << "name of Zombie >" ;
+	std::getline(std::cin, name);
+
+	Zombie *new_Zombie = zombieHorde( std::atoi(number.c_str()), name );
+	
+	for(int i = 0; i < std::atoi(number.c_str()); i++)
+		new_Zombie->announce();
+	delete []new_Zombie;
 }
+	

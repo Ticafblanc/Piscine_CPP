@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   BraiiiiiiinnnzzzZ.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,12 @@
 
 #include "Zombie.hpp"
 
-Zombie* newZombie( std::string name ){
+int		main(void)
+{
+	Zombie *new_Zombie = newZombie("new_Zombie");
 
-	return new Zombie(name);
+	new_Zombie->announce();
+	delete new_Zombie;
+	randomChump("random_Zombie");
 }
+	

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,10 @@
 
 #include "Zombie.hpp"
 
-Zombie* newZombie( std::string name ){
+Zombie::Zombie(){}
 
-	return new Zombie(name);
-}
+Zombie::~Zombie(){ std::cout << this->_name << " : is destroyed." << std::endl ; }
+
+void	Zombie::init(std::string	name){this->_name = name;}
+
+void	Zombie::announce(void)const{ std::cout << this->_name << " : BraiiiiiiinnnzzzZ..." << std::endl ; }

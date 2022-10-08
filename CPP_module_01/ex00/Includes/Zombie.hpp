@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.class.hpp        			                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-Zombie* newZombie( std::string name ){
+#include <iostream>
+#include <string>
 
-	return new Zombie(name);
-}
+void    randomChump( std::string name );
+
+class Zombie
+{
+private:
+	
+	std::string _name;
+
+public:
+
+	Zombie(std::string name);
+	~Zombie();
+
+	void announce( void ) const;
+};
+
+Zombie* newZombie( std::string name );
+
+#endif

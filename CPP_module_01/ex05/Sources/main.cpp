@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Harl_2.0.cpp          			                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie* newZombie( std::string name ){
 
-	return new Zombie(name);
+int main(void)
+{
+	std::string	cpl;
+	Harl	harl;
+
+	while (1)
+	{
+		std::cout << "Harl complain > ";
+		std::getline(std::cin, cpl);
+		if (cpl == "EXIT")
+			break;
+		if (cpl == "INFO" || cpl == "DEBUG" || cpl == "WARNING" || cpl == "ERROR")
+			harl.complain(cpl);
+	}
+	return 0;
 }
+	

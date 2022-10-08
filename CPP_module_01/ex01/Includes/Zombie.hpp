@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.class.hpp        			                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-Zombie* newZombie( std::string name ){
+#include <iostream>
+#include <string>
+#include <cstring>
 
-	return new Zombie(name);
-}
+
+class Zombie
+{
+private:
+	
+	std::string _name;
+
+public:
+
+	Zombie(void);
+	~Zombie();
+
+	void	announce( void ) const;
+	void	init(std::string	name);
+};
+
+Zombie*    zombieHorde( int N, std::string name );
+
+#endif

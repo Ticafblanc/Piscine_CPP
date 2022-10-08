@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.class.cpp        			                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-Zombie* newZombie( std::string name ){
+HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(weapon){}
 
-	return new Zombie(name);
+HumanA::~HumanA(void){}
+
+void HumanA::attack(void) const{
+	
+	std::cout << this->_name << " attacks with his " << this->_weapon.getType() << std::endl;
 }

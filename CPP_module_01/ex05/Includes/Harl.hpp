@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Harl.class.hpp         			                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_CLASS_HPP
+# define HARL_CLASS_HPP
 
-Zombie* newZombie( std::string name ){
+#include <iostream>
+#include <string>
+#include <map>
 
-	return new Zombie(name);
-}
+class Harl
+{
+    private:
+
+        void   debug(void);
+        void   info(void);
+        void   warning(void);
+        void   error(void);
+
+    public:
+
+        Harl();
+        ~Harl();
+
+        void    complain( std::string level );
+
+};
+
+#endif

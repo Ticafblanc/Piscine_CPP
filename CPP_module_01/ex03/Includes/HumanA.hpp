@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.class.hpp        			                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoquocb <mdoquocb@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_CLASS_HPP
+# define HUMANA_CLASS_HPP
 
-Zombie* newZombie( std::string name ){
+#include <iostream>
+#include <string>
+#include "Weapon.hpp"
 
-	return new Zombie(name);
-}
+class HumanA{
+
+	public:
+	
+		HumanA(std::string name, Weapon& weapon);
+		~HumanA(void);
+		void attack(void) const;
+
+	private:
+
+		std::string _name;
+		Weapon& _weapon;
+
+};
+#endif

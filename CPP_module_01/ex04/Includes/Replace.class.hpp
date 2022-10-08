@@ -13,14 +13,16 @@
 #ifndef REPLACE_CLASS_HPP
 # define REPLACE_CLASS_HPP
 
-#include "Sed_is_for_losers.hpp"
+#include <iostream>
+#include <string>
+#include <fstream>
 
 class Replace
 {
 private:
 
-    std::string _s1;//to find
-    std::string _s2;//to replace
+    std::string _s1;
+    std::string _s2;
 
 public:
 

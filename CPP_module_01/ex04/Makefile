@@ -50,6 +50,8 @@ CC_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CL = rm -rf
 
+LEAKS = leaks --atExit --
+
 
 	#  COLORS STR #
 
@@ -89,8 +91,9 @@ $(BIN): title directory $(OBJ)
 		@echo $(BLUE) $(notdir $(BIN)) is created !!
 
 run: all
-		@read -p "function argument: " INP; \
-		./$(BIN_PATH)$(BIN_NAME) $$INP; \
+		@$(CL) .replace; \ 
+		read -p "function argument: " INP; \
+		$(LEAKS) ./$(BIN_PATH)$(BIN_NAME) $$INP; \
 		diff test .replace 
 
 title: 
