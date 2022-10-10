@@ -13,7 +13,9 @@
 #ifndef FIXED_CLASS_HPP
 # define FIXED_CLASS_HPP
 
-#include "Premiers_pas_vers_une_classe_utile.hpp"
+#include <iostream>
+#include <string>
+#include <cmath>
 
 class Fixed
 {

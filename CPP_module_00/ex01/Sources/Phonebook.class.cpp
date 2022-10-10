@@ -16,6 +16,7 @@
 Phonebook::Phonebook(void){
 
 	this->_nb_contact = 0;
+	this->_old_contact = 0;
 	this->_repertoire[0] = & this->_contact0;
 	this->_repertoire[1] = & this->_contact1;
 	this->_repertoire[2] = & this->_contact2;
@@ -33,9 +34,21 @@ Phonebook::Phonebook(void){
 
 void	Phonebook::add(void){
 
-	this->_repertoire[this->_nb_contact]->add();
-	if (this->_nb_contact < 7)
+	if (this->_nb_contact <= 7)
+	{
+		this->_repertoire[this->_nb_contact]->add();
 		this->_nb_contact++;
+	}
+	else
+	{
+		this->_repertoire[this->_old_contact]->add();
+		this->_old_contact++;
+		if (this->_old_contact > 7)
+			this->_old_contact = 0;
+	}
+	
+	
+		
 }
 
 void	Phonebook::search(void){

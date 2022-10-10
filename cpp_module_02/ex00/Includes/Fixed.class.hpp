@@ -13,7 +13,8 @@
 #ifndef FIXED_CLASS_HPP
 # define FIXED_CLASS_HPP
 
-#include "Mon_premier_canon.hpp"
+#include <iostream>
+#include <string>
 
 class Fixed
 {

@@ -14,10 +14,7 @@
 # define POINT_HPP
 
 #include "Fixed.hpp"
-
-
-class Point
-{
+class Point{
 	private:
 
 		Fixed const _x;
@@ -28,15 +25,15 @@ class Point
 		Point(void);
 		Point(const float x, const float y);
 		Point(const Point& copy);
+		Point& operator=(const Point& rhs);
 		~Point(void);
 
+		Fixed const get_X(void) const;
+		Fixed const get_Y(void) const;
 
-		Point& operator=(const Point& rhs);
-
-		Fixed const getX(void) const;
-		Fixed const getY(void) const;
+		Point static PromptPoint(void);
 };
 
-bool bsp(Point const a, Point const b, Point const c, Point const point);
+
 
 #endif

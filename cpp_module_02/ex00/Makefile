@@ -50,6 +50,8 @@ CC_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CL = rm -rf
 
+LEAKS = leaks --atExit --
+
 
 	#  COLORS STR #
 
@@ -89,7 +91,7 @@ $(BIN): title directory $(OBJ)
 		@echo $(BLUE) $(notdir $(BIN)) is created !!
 
 run: all
-		@./$(BIN_PATH)$(BIN_NAME) 
+		@$(LEAKS) ./$(BIN_PATH)$(BIN_NAME) 
 title: 
 		@echo $(GREEN)******************$(PROJECT)******************
 

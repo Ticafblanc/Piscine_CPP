@@ -50,6 +50,8 @@ CC_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CL = rm -rf
 
+LEAKS = leaks --atExit --
+
 
 	#  COLORS STR #
 

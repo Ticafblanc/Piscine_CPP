@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.class.hpp"
+#include "Fixed.hpp"
 
 int const Fixed::_nb_Bits_fractional = 8;
 
@@ -41,39 +41,11 @@ Fixed::~Fixed(){
 int	Fixed::getRawBits(void) const{
 
 	std::cout << "getRawBits member function called" << std::endl;
-	return this->_RawBits;
+	return this->_RawBits ;
 }
 
 void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	this->_RawBits = raw;
-}
-
-Fixed::Fixed(int const in){
-
-	std::cout << "Int constructor called" << std::endl;
-	this->_RawBits = (in << _nb_Bits_fractional);
-}
-
-Fixed::Fixed(float const floa){
-
-	std::cout << "Float constructor called" << std::endl;
-	this->_RawBits = int(roundf(floa * (1 << _nb_Bits_fractional)));
-}
-
-float Fixed::toFloat( void ) const
-{
-	return float (this->_RawBits) / (1 << _nb_Bits_fractional);
-}
-
-int Fixed::toInt( void ) const
-{
-	return this->_RawBits >> _nb_Bits_fractional;
-}
-
-std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
-{
-	o << rhs.toFloat();
-	return o;
+	this->_RawBits = (raw << _nb_Bits_fractional);
 }

@@ -30,6 +30,7 @@ class Phonebook{
 
 		std::string	_header[5];
 		int			_nb_contact;
+		int			_old_contact;
 		Contact	*_repertoire[8];
 		Contact	_contact0;
 		Contact	_contact1;
