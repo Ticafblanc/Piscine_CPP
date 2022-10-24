@@ -23,7 +23,7 @@ Point::~Point(void){}
 
 Point & Point::operator=(Point const & rhs){
 	Fixed *X = const_cast <Fixed*> (&this->_x);
-	Fixed *Y = const_cast <Fixed*> (&this->_x);
+	Fixed *Y = const_cast <Fixed*> (&this->_y);
 	*X = rhs._x;
 	*Y = rhs._y;
 	return *this;
