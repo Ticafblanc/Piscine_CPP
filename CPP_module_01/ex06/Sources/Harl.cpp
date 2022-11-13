@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Harl.class.hpp"
 
 Harl::Harl(){}
 
@@ -26,23 +26,6 @@ void    Harl::complain(int	level){
 		(this->*f[i])();
 		std::cout << std::endl;
 	}
-
-	// std::map<int, void (Harl:: *)()>		m;
-	// m[1] = &Harl::info;
-    // m[2] = &Harl::debug;
-    // m[3] = &Harl::warning;
-    // m[4] = &Harl::error;
-	// std::map<int, std::string>    m2;
-    // m2[1] = "[INFO]";
-    // m2[2] = "[DEBUG]";
-    // m2[3] = "[WARNING]";
-    // m2[4] = "[ERROR]";
-	// while (level < 5)
-	// {
-	// 	std::cout << m2[level] << std::endl;
-	// 	(this->*m[level++])();
-	// 	std::cout << std::endl;
-	// }
 }
 
 void Harl::debug(void){

@@ -50,7 +50,7 @@ CC_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CL = rm -rf
 
-LEAKS = leaks --atExit --
+LEAKS = valgrind --leak-check=full
 
 
 	#  COLORS STR #
@@ -91,9 +91,17 @@ $(BIN): title directory $(OBJ)
 		@echo $(BLUE) $(notdir $(BIN)) is created !!
 
 run: all
-		@$(CL) .replace; \ 
-		read -p "function argument: " INP; \
-		$(LEAKS) ./$(BIN_PATH)$(BIN_NAME) $$INP; \
+		@read -p "file : " FIL \
+		&& read -p "string to find : " STR \
+		&&read -p "string to replace : " REP \
+		&& ./$(BIN_PATH)$(BIN_NAME) $$FIL $$STR $$REP; \
+		diff test .replace 
+
+vun: all
+		@read -p "file : " FIL \
+		&& read -p "string to find : " STR \
+		&&read -p "string to replace : " REP \
+		&& $(LEAKS) ./$(BIN_PATH)$(BIN_NAME) $$FIL $$STR $$REP; \
 		diff test .replace 
 
 title: 
@@ -111,7 +119,8 @@ fclean: clean
 		@$(CL) $(BIN)
 		@echo $(RED) Binary $(notdir $(BIN)) is delete !
 
-finish: 
+finish:
+		@$(CL) .replace
 		@$(CL) $(BIN_PATH)
 		@echo $(RED) All $(PROJECT) is delete !
 
