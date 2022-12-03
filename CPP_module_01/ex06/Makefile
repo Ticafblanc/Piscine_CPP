@@ -50,7 +50,7 @@ CC_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CL = rm -rf
 
-LEAKS = leaks --atExit --
+LEAKS = valgrind --leak-check=full
 
 	#  COLORS STR #
 
@@ -91,7 +91,12 @@ $(BIN): title directory $(OBJ)
 
 run: all
 		@read -p "Harl complain > " INP; \
+		./$(BIN_PATH)$(BIN_NAME) $$INP
+
+vun: all
+		@read -p "Harl complain > " INP; \
 		$(LEAKS) ./$(BIN_PATH)$(BIN_NAME) $$INP
+
 title: 
 		@echo $(GREEN)******************$(PROJECT)******************
 

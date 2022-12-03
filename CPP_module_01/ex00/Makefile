@@ -50,6 +50,8 @@ CC_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CL = rm -rf
 
+LEAKS = valgrind --leak-check=full  
+
 
 	#  COLORS STR #
 
@@ -90,6 +92,9 @@ $(BIN): title directory $(OBJ)
 
 run: all
 		@./$(BIN_PATH)$(BIN_NAME)
+
+vun: all
+		@$(LEAKS) ./$(BIN_PATH)$(BIN_NAME)
 
 title: 
 		@echo $(GREEN)******************$(PROJECT)******************
