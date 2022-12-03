@@ -22,7 +22,12 @@ public:
 	unsigned int get_Energy_points(void);
 	unsigned int get_Hit_points(void);
 
-protected:
+	void set_Name(std::string Name);
+	void set_Attack_damage(int p);
+	void set_Energy_points(int p);
+	void set_Hit_points(int p);
+
+private:
 	const std::string		_Name;
 	unsigned int	_Hit_points;
 	unsigned int	_Energy_points;

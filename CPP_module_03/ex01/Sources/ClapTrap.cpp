@@ -78,3 +78,13 @@ std::string const & ClapTrap::get_Name(void){ return this->_Name; }
 unsigned int ClapTrap::get_Attack_damage(void){ return this->_Attack_damage; }
 unsigned int ClapTrap::get_Hit_points(void){ return this->_Hit_points; }
 unsigned int ClapTrap::get_Energy_points(void){ return this->_Energy_points; }
+
+void ClapTrap::set_Name(std::string Name)
+{
+	std::string *N = const_cast <std::string*> (&this->_Name);
+	*N = Name;
+}
+
+void ClapTrap::set_Attack_damage(int p){ this->_Attack_damage = p; }
+void ClapTrap::set_Hit_points(int p){ this->_Hit_points = p; }
+void ClapTrap::set_Energy_points(int p){ this->_Energy_points = p; }

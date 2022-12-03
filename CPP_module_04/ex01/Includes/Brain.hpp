@@ -5,10 +5,10 @@ class Brain
 {
 public:
 	Brain();
+	brain(const std::string src[100]);
 	Brain(const Brain& copy);
 	Brain& operator=(const Brain& rhs);
 	~Brain();
 	
-private:
-	std::string _ideas[100];
+	std::string ideas[100];
 };

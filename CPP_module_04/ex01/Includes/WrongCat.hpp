@@ -10,4 +10,6 @@ public:
 	~WrongCat();
 
 	void makeSound() const;
+private:
+	Brain* _brain;	
 };

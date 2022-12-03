@@ -49,15 +49,19 @@ int main()
 	delete t2;
 	delete t3;
 
-	Animal* animals[10];
+	Animal animals[10];
 	
 	for (int i = 0; i < 10; i++)
 	{
-		if (i % 2)
+		if (i < 5)
 			animals[i] = new Dog();
 		else
 			animals[i] = new Cat();
 	}
+
+	std:string cat_think[3]{"miaou", "boulle de poil", "j'ai plus d'idee"};
+	std:string dog_think[3]{"wouaf", "croquette", "j'ai plus d'idee"};
+
 	Cat copy(*(Cat *)animals[0]);
 	std::cout << std::endl;
 	for (int i = 0; i < 100; i++)
