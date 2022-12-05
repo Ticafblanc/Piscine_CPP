@@ -1,16 +1,16 @@
-#include "Animal.hpp"
+#include "A_Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public A_Animal
 {
 public:
 	Cat();
 	Cat(std::string type, std::string src[100]);
 	Cat(const Cat& copy);
 	Cat& operator=(const Cat& rhs);
-	virtual ~Cat();
+	~Cat();
 
-	virtual void makeSound() const;
+	void makeSound() const;
 	Brain & get_Brain(void) const;
 
 private:

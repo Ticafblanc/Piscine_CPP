@@ -1,24 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdoquocb <mdoquocb@student.42quebec.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/04 09:34:48 by mdoquocb          #+#    #+#             */
+/*   Updated: 2022/12/04 09:34:48 by mdoquocb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 #include <iostream>
 
 class WrongAnimal
 {
 public:
-	// Constructors
 	WrongAnimal();
 	WrongAnimal(std::string type);
 	WrongAnimal(const WrongAnimal& other);
-
-	// Assignment operator overload
 	WrongAnimal& operator=(const WrongAnimal& rhs);
-	
-	// Destructor
 	virtual ~WrongAnimal();
-
-	// Getters
 	std::string getType() const;
 
-	// Member functions
 	void makeSound() const;
 
 protected:

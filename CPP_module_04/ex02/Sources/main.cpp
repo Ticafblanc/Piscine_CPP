@@ -7,20 +7,20 @@ int main()
 	std::string cat_brain[] = {"cat", "cat1", "cat2", ""};
 	std::string dog_brain[] = {"dog", "dog1", "dog2", ""};
 
-	const Animal* meta = new Animal();
+	//const A_Animal* meta = new A_Animal();
+	//std::cout << std::endl;
+	const A_Animal* i = new Cat();
 	std::cout << std::endl;
-	const Animal* i = new Cat();
-	std::cout << std::endl;
-	const Animal* j = new Dog("Golden Retriever", dog_brain);
+	const A_Animal* j = new Dog("Golden Retriever", dog_brain);
 	std::cout << std::endl;
 	const WrongAnimal* k = new WrongCat();
 	std::cout << std::endl;
 	const WrongCat* l = new WrongCat("Black Tabby", cat_brain);
 	std::cout << std::endl;
-	Animal cat("1");
-	Animal dog("2");
+	// A_Animal cat("1");
+	// A_Animal dog("2");
 	std::cout << std::endl;
-	Animal *animals[10];
+	A_Animal *animals[10];
 	std::cout << std::endl;
 	std::cout << std::endl;
 	
@@ -47,9 +47,9 @@ int main()
 	}
 
 	std::cout << std::endl<< ">>>>Fin du tableau brain<<<<"<< std::endl;
-	std::cout << std::endl << meta->getType() << std::endl;
-	meta->makeSound();
-	std::cout << std::endl;
+	// std::cout << std::endl << meta->getType() << std::endl;
+	// meta->makeSound();
+	// std::cout << std::endl;
 	std::cout << i->getType() << std::endl;
 	i->makeSound();
 	std::cout << std::endl;
@@ -59,25 +59,25 @@ int main()
 	std::cout << k->getType() << std::endl;
 	k->makeSound();
 	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << cat.getType() << std::endl;
-	cat.makeSound();
-	std::cout << std::endl;
-	std::cout << dog.getType() << std::endl;
-	dog.makeSound();
-	std::cout << std::endl;
+	// std::cout << std::endl;
+	// std::cout << cat.getType() << std::endl;
+	// cat.makeSound();
+	// std::cout << std::endl;
+	// std::cout << dog.getType() << std::endl;
+	// dog.makeSound();
+	// std::cout << std::endl;
 	*(Dog *)i = *(Dog *)j;
 	std::cout << i->getType() << std::endl;
 	i->makeSound();
 	std::cout << std::endl;
-	dog = cat;
-	std::cout << std::endl;
-	std::cout << cat.getType() << std::endl;
-	cat.makeSound();
-	std::cout << std::endl;
-	std::cout << dog.getType() << std::endl;
-	dog.makeSound();
-	const Animal* copy = new Dog(*(const Dog*)j);
+	//dog = cat;
+	// std::cout << std::endl;
+	// std::cout << cat.getType() << std::endl;
+	// cat.makeSound();
+	// std::cout << std::endl;
+	// std::cout << dog.getType() << std::endl;
+	// dog.makeSound();
+	const A_Animal* copy = new Dog(*(const Dog*)j);
 	std::cout << std::endl;
 	std::cout << copy->getType() << std::endl;
 	copy->makeSound();
@@ -85,7 +85,7 @@ int main()
 	std::cout << j->getType() << std::endl;
 	j->makeSound();
 
-	delete meta;
+	//delete meta;
 	delete i;
 	delete j;
 	delete k;

@@ -1,16 +1,16 @@
-#include "Animal.hpp"
+#include "A_Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal
+class Dog : public A_Animal
 {
 public:
 	Dog();
 	Dog(std::string type, std::string src[100]);
 	Dog(const Dog& copy);
 	Dog& operator=(const Dog& rhs);
-	virtual ~Dog();
+	~Dog();
 
-	virtual void makeSound() const;
+	void makeSound() const;
 	Brain & get_Brain(void) const ;
 
 private:
