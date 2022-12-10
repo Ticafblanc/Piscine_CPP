@@ -6,7 +6,7 @@
 /*   By: mdoquocb <mdoquocb@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 09:35:09 by mdoquocb          #+#    #+#             */
-/*   Updated: 2022/12/04 20:06:57 by mdoquocb         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:51:23 by mdoquocb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ A_Animal& A_Animal::operator=(const A_Animal& rhs)
 
 A_Animal::~A_Animal(){ std::cout << "Animal destructor called for " << this->_type << std::endl; }
 
-void A_Animal::makeSound() const { std::cout << "Default animal sound" << std::endl; }
+//void A_Animal::makeSound() const { std::cout << "Default animal sound" << std::endl; }
 
 std::string A_Animal::getType() const { return this->_type; }

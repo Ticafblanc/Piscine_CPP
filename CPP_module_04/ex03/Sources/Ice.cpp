@@ -1,15 +1,9 @@
 #include "Ice.hpp"
 #include <iostream>
 
-Ice::Ice()
-	: AMateria("ice")
-{
-}
+Ice::Ice() : AMateria("ice"){}
 
-Ice::Ice(const Ice& other)
-	: AMateria(other)
-{
-}
+Ice::Ice(const Ice& other) : AMateria(other){}
 
 Ice& Ice::operator=(const Ice& other)
 {
@@ -17,16 +11,8 @@ Ice& Ice::operator=(const Ice& other)
 	return *this;
 }
 
-Ice::~Ice()
-{
-}
+Ice::~Ice(){}
 
-void Ice::use(ICharacter& target)
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-}
+void Ice::use(ICharacter& target){ std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;}
 
-AMateria* Ice::clone() const
-{
-	return new Ice(*this);
-}
+AMateria* Ice::clone() const{return new Ice(*this);}

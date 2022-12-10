@@ -2,10 +2,13 @@
 #include <string>
 #include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria
 {
 public:
 
+	AMateria(void);
 	AMateria(std::string const & type);
 	AMateria(const AMateria& other);
 
