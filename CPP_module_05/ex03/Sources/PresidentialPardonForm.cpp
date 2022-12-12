@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdoquocb <mdoquocb@student.42quebec.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/12 15:04:22 by mdoquocb          #+#    #+#             */
+/*   Updated: 2022/12/12 15:04:23 by mdoquocb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
 
@@ -26,7 +38,7 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if (this->AForm::getSigned() && executor.getGrade() <= this->AForm::getGradeExec())
 	{
-		std::cout << "\n\t\t"<< this->_targetname << "has have been forgiven!!!\n" << std::endl;
+		std::cout << "\n\t\t"<< this->_targetname << " has have been forgiven!!!\n" << std::endl;
 		std::cout << "______              _     _            _   _       _  ______             _             " << std::endl;
 		std::cout << "| ___ \\            (_)   | |          | | (_)     | | | ___ \\           | |            " << std::endl;
 		std::cout << "| |_/ / __ ___  ___ _  __| | ___ _ __ | |_ _  __ _| | | |_/ /_ _ _ __ __| | ___  _ __  " << std::endl;

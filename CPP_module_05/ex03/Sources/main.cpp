@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdoquocb <mdoquocb@student.42quebec.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/12 15:04:13 by mdoquocb          #+#    #+#             */
+/*   Updated: 2022/12/12 15:04:14 by mdoquocb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -61,6 +73,7 @@ int main()
 		print(Bur, n_bur, Form, n_form);
 		std::cout << "enter your command: ";
 		std::getline(std::cin, input);
+		std::cout << "\x1B[2J\x1B[H";
 		if (input == "add")
 		{
 			std::cout << "What would you add ? form/bur: ";
@@ -119,7 +132,6 @@ int main()
 					std::cerr << "Form inconnu" << std::endl;
 				}
 			}
-			std::cout << "\x1B[2J\x1B[H";
 		}
 		else if (input == "inc")
 		{
@@ -136,7 +148,6 @@ int main()
 			{
 				std::cerr << e.what() << std::endl;
 			}
-			std::cout << "\x1B[2J\x1B[H";
 		}
 		else if (input == "dec")
 		{
@@ -153,25 +164,23 @@ int main()
 			{
 				std::cerr << e.what() << std::endl;
 			}	
-			std::cout << "\x1B[2J\x1B[H";
 		}
 		else if (input == "sign")
 		{
 			std::cout << "Which form to sign : ";
 			std::getline(std::cin, input);
-			grade = std::atoi(input.c_str());//or try
+			grade = std::atoi(input.c_str());
 			std::cout << "by which bur : ";
 			std::getline(std::cin, input);
 			grade2 = std::atoi(input.c_str());
 			if (grade2 > n_bur || grade > n_form || n_bur < 1 || n_form < 1)
 					continue;
 			Form[grade - 1]->beSigned(*Bur[grade2 - 1]);
-			std::cout << "\x1B[2J\x1B[H";
 		}
 		else if (input == "exec")
 		{
 			std::cout << "Which form to exec : ";
-			std::getline(std::cin, input);//dans le try
+			std::getline(std::cin, input);
 			grade = std::atoi(input.c_str());
 			std::cout << "by which bur : ";
 			std::getline(std::cin, input);
@@ -179,7 +188,6 @@ int main()
 			if (grade2 > n_bur || grade > n_form || n_bur < 1 || n_form < 1)
 					continue;
 			Bur[grade2 - 1]->executeForm(*Form[grade - 1]);
-			std::cout << "\x1B[2J\x1B[H";
 		}
 		else if (input == "exit")
 			break;

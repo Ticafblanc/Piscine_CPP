@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdoquocb <mdoquocb@student.42quebec.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/12 15:04:38 by mdoquocb          #+#    #+#             */
+/*   Updated: 2022/12/12 15:04:39 by mdoquocb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 #include <fstream>
@@ -6,24 +18,18 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 	: AForm("ShrubberyCreationForm", false, 145, 137), _targetname("<no_target>")
 {
   	std::ofstream	_target(this->_targetname);
-	// std::ofstream	d(".todelete", std::ofstream::app);
-	// d << this->_targetname << std::endl; 
 	if (!_target.is_open())
 		throw std::ofstream::failure(strerror(errno));
 	_target.close();
-	//d.close();
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
 	: AForm("ShrubberyCreationForm", false, 145, 137), _targetname(target)
 {
 	std::ofstream	_target(this->_targetname);
-	// std::ofstream	d(".todelete", std::ofstream::app);
-	// d << this->_targetname << std::endl;
 	if (!_target.is_open())
 		throw std::ofstream::failure(strerror(errno));
 	_target.close();	
-	//d.close();
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
