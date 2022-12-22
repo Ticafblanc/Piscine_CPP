@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = Conversion_scalaire
+PROJECT = 01
 
 	#  BINARY  #
 
@@ -91,8 +91,7 @@ $(BIN): title directory $(OBJ)
 		@echo $(BLUE) $(notdir $(BIN)) is created !!
 
 run: all
-		@read -p "function argument: " INP \
-		&& $(LEAKS) ./$(BIN_PATH)$(BIN_NAME) "$${INP}"
+		@$(LEAKS) ./$(BIN_PATH)$(BIN_NAME) 
 		@make finish
 title: 
 		@echo $(GREEN)******************$(PROJECT)******************
