@@ -24,16 +24,21 @@ void Span::addNumber(int x)
 		throw Full();
 }
 
-std::vector<int>::iterator& Span::addNumber(std::vector<int>::iterator&const std::vector<int>::iterator& begin, const std::vector<int>::iterator& end)
+std::vector<int>::iterator& Span::addNumber(std::vector<int>::iterator& it, const std::vector<int>::iterator& begin, const std::vector<int>::iterator& end)
 {
-	try
-	{
-		this->_v.insert(this->_v.end(), begin, end);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	if (static_cast<unsigned long>(std::distance(begin, end)) < this->_size - this->_v.size())
+		try
+		{
+			it = this->_v.insert(it, begin, end);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		
+	else
+		throw Full();
+	return it;
 }
 
 unsigned int Span::shortestSpan()

@@ -12,7 +12,7 @@ public:
 	~Span();
 
 	void addNumber(int x);
-	void addNumber(const std::vector<int>::iterator begin, const std::vector<int>::iterator end);
+	std::vector<int>::iterator& addNumber(std::vector<int>::iterator& it, const std::vector<int>::iterator& begin, const std::vector<int>::iterator& end);
 	unsigned int shortestSpan();
 	unsigned int longestSpan();
 	std::vector<int> get_v() const;
