@@ -20,6 +20,12 @@ BIN_NAME = $(PROJECT)
 
 BIN = $(addprefix $(BIN_PATH),$(BIN_NAME))
 
+	#  TEMPLATE  #
+
+TMP_PATH = ./Template
+
+TMP_FLAGS = -I $(TMP_PATH)
+
 	#  INCLUDES  #
 
 INC_PATH = ./Includes
@@ -83,7 +89,7 @@ all: $(BIN)
 		@echo $(GREEN) Compilation $(PROJECT) is completed !!
 
 $(OBJ_PATH)%.o:$(SRC_PATH)%.cpp
-		@$(CC) $(CC_FLAGS) $(INC_FLAGS) -c $< -o $@
+		@$(CC) $(CC_FLAGS)  $(TMP_FLAGS) $(INC_FLAGS) -c $< -o $@
 		@echo $(BLUE) $(notdir $@) is created !!
 
 $(BIN): title directory $(OBJ)
