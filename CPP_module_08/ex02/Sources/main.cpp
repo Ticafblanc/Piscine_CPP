@@ -1,106 +1,129 @@
 #include "mutantstack.tpp"
 #include <stack>
+#include <list>
 #include <iostream>
 
 int main()
 {
-	std::stack<int> *Mstack = new MutantStack<int>();
-	std::stack<int> Scopy;
+	std::cout << "Stack" << std::endl;
+	std::stack<int> Mstack = MutantStack<int>();
 
-	// Mstack.push(5);
-	// std::cout 	<< "top: " << Mstack.top()
-	// 			<< " size: " << Mstack.size() << std::endl;
+	Mstack.push(5);
+	std::cout 	<< "top: " << Mstack.top()
+				<< " size: " << Mstack.size() << std::endl;
 
-	// Mstack.push(17);
-	// std::cout 	<< "top: " << Mstack.top()
-	// 		 	<< " size: " << Mstack.size() << std::endl;
+	Mstack.push(17);
+	std::cout 	<< "top: " << Mstack.top()
+			 	<< " size: " << Mstack.size() << std::endl;
 
-	// Mstack.push(11);
-	// std::cout 	<< "top: " << Mstack.top()
-	// 		 	<< " size: " << Mstack.size() << std::endl;
+	Mstack.push(11);
+	std::cout 	<< "top: " << Mstack.top()
+			 	<< " size: " << Mstack.size() << std::endl;
 
-	// Mstack.push(21);
-	// std::cout 	<< "top: " << Mstack.top()
-	// 		 	<< " size: " << Mstack.size() << std::endl;
+	Mstack.push(21);
+	std::cout 	<< "top: " << Mstack.top()
+			 	<< " size: " << Mstack.size() << std::endl;
 
-	// Mstack.push(12);
-	// std::cout 	<< "top: " << Mstack.top()
-	// 		 	<< " size: " << Mstack.size() << std::endl;
+	Mstack.push(12);
+	std::cout 	<< "top: " << Mstack.top()
+			 	<< " size: " << Mstack.size() << std::endl;
 
-	// Mstack.push(54);
-	// std::cout 	<< "top: " << Mstack.top()
-	// 		 	<< " size: " << Mstack.size() << std::endl;
+	Mstack.push(54);
+	std::cout 	<< "top: " << Mstack.top()
+			 	<< " size: " << Mstack.size() << std::endl;
 
-	// Mstack.push(87);
-	// std::cout 	<< "top: " << Mstack.top()
-	// 		 	<< " size: " << Mstack.size() << std::endl;
+	Mstack.push(87);
+	std::cout 	<< "top: " << Mstack.top()
+			 	<< " size: " << Mstack.size() << std::endl;
 
-	// Mstack.push(45);
-	// std::cout 	<< "top: " << Mstack.top()
-	// 		 	<< " size: " << Mstack.size() << std::endl;
+	Mstack.push(45);
+	std::cout 	<< "top: " << Mstack.top()
+			 	<< " size: " << Mstack.size() << std::endl;
 
-	// Mstack.pop();
-	// std::cout 	<< "top: " << Mstack.top()
-	// 		 	<< " size: " << Mstack.size() << std::endl;
+	Mstack.pop();
+	std::cout 	<< "top: " << Mstack.top()
+			 	<< " size: " << Mstack.size() << std::endl;
+	// std::stack<int>::iterator ite;
+	// std::stack<int>::iterator ite;
 
-	// Scopy = Mstack;
-	// Scopy.pop();
-	// std::cout 	<< "copy >> "<< "top: " << Scopy.top()
-	// 		 	<< " size: " << Scopy.size() << std::endl;
-	// std::cout 	<< "stack >> "<< "top: " << Mstack.top()
-	// 		 	<< " size: " << Mstack.size() << std::endl;
+	std::cout << "mutant" << std::endl;
 
-	MutantStack<int>::iterator it = Mstack->begin();
-	MutantStack<int>::iterator ite = Mstack->end();
+	MutantStack<int> 	mut;
+	mut.push(5);
+	std::cout 	<< "top: " << mut.top()
+				<< " size: " << mut.size() << std::endl;
 
+	mut.push(17);
+	std::cout 	<< "top: " << mut.top()
+			 	<< " size: " << mut.size() << std::endl;
+
+	mut.push(11);
+	std::cout 	<< "top: " << mut.top()
+			 	<< " size: " << mut.size() << std::endl;
+
+	mut.push(21);
+	std::cout 	<< "top: " << mut.top()
+			 	<< " size: " << mut.size() << std::endl;
+
+	mut.push(12);
+	std::cout 	<< "top: " << mut.top()
+			 	<< " size: " << mut.size() << std::endl;
+
+	mut.push(54);
+	std::cout 	<< "top: " << mut.top()
+			 	<< " size: " << mut.size() << std::endl;
+
+	mut.push(87);
+	std::cout 	<< "top: " << mut.top()
+			 	<< " size: " << mut.size() << std::endl;
+
+	mut.push(45);
+	std::cout 	<< "top: " << mut.top()
+			 	<< " size: " << mut.size() << std::endl;
+
+	mut.pop();
+	std::cout 	<< "top: " << mut.top()
+			 	<< " size: " << mut.size() << std::endl;
+
+	MutantStack<int>::iterator it = mut.begin();
+	MutantStack<int>::iterator ite = mut.end();
 	++it;
 	--it;
 	while (it != ite)
 	{
-		std::cout << *it << std::endl;
+		std::cout  << "mut = "<< *it << std::endl;
 		++it;
 	}
-	// std::stack<int> s(mstack);
+	std::stack<int> s(mut);
 
-	// // MutantStack<std::string> rev;
+	std::list<int>    list;
 
-	// rev.push("one");
-	// rev.push("two");
-	// rev.push("three");
-	// rev.push("four");
-	// rev.push("five");
+    list.push_back(5);
+    list.push_back(99);
 
-	// MutantStack<std::string>::reverse_iterator rev_itr = rev.rbegin();
-	// for (; rev_itr != rev.rend(); rev_itr++)
-	// 	std::cout << *rev_itr << std::endl;
+	std::list<int>::iterator itlist = list.begin();
+    std::list<int>::iterator itliste = list.end();
 
-	// std::cout << "--- Copy constructor ---" << std::endl;
-
-	// MutantStack<int> copy(mstack);
-	// MutantStack<int> a_copy = mstack;
-
-	// copy.pop();
-	// copy.pop();
-	// copy.pop();
-	// copy.push(64);
-	// copy.push(65);
-	// copy.push(66);
-
-	// MutantStack<int>::iterator copy_itr = copy.begin();
-	// for (; copy_itr != copy.end(); copy_itr++)
-	// 	std::cout << *copy_itr << std::endl;
-
-	// std::cout << "--- Assignment operator ---" << std::endl;
-
-	// a_copy.pop();
-	// a_copy.pop();
-	// a_copy.pop();
-	// a_copy.push(128);
-	// a_copy.push(129);
-	// a_copy.push(130);
-
-	// MutantStack<int>::iterator a_copy_itr = a_copy.begin();
-	// for (; a_copy_itr != a_copy.end(); a_copy_itr++)
-	// 	std::cout << *a_copy_itr << std::endl;
+	while (itlist != itliste)
+	{
+		std::cout << "list = "<< *itlist << std::endl;
+		++itlist;
+	}
 	return 0;
 }
+
+// int main()
+// {
+// 	MutantStack<int> mstack;
+// 	mstack.push(5); mstack.push(17);
+// 	std::cout << mstack.top() << std::endl; mstack.pop();
+// 	std::cout << mstack.size() << std::endl;
+// 	mstack.push(3); mstack.push(5); mstack.push(737); //[...] mstack.push(0);
+// 	MutantStack<int>::iterator it = mstack.begin(); MutantStack<int>::iterator ite = mstack.end();
+// 	++it;
+// 	--it;
+// 	while (it != ite) {
+//     std::cout << *it << std::endl;
+// 	++it; }
+// 	std::stack<int> s(mstack); return 0;
+// }
