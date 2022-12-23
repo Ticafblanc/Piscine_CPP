@@ -24,40 +24,45 @@ void Span::addNumber(int x)
 		throw Full();
 }
 
-void Span::addNumber(range_t& r)
+std::vector<int>::iterator& Span::addNumber(std::vector<int>::iterator&const std::vector<int>::iterator& begin, const std::vector<int>::iterator& end)
 {
-	if (this->_v.size() < this->_size)
+	try
 	{
-		int distance = std::distance(r.begin_it, r.end_it);
-		if (distance + this->_v.size() > this->_size)
-			r.end_it -= distance + this->_v.size() - this->_size;
-		this->_v.insert(this->_v.end(), r.begin_it, r.end_it);
+		this->_v.insert(this->_v.end(), begin, end);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
+
+unsigned int Span::shortestSpan()
+{
+	if (this->_v.size() > 1)
+	{
+		sort(this->_v.begin(), this->_v.end());
+		std::vector<int>::iterator	it = this->_v.begin();
+		int i = *(it + 1) - *it;
+		for(; it != this->_v.end() - 1; it++)
+		{
+			i = (i > *(it + 1) - *it) ? (*(it + 1) - *it) : i;
+		}
+		return i ; 
 	}
 	else
-		throw Full();
+		throw noFound ();
 }
 
-unsigned int Span::shortestSpan() const
+unsigned int Span::longestSpan() 
 {
-	std::vector<int> tmp;
-
-	if (this->_v.size() < this->_size)
-	int (*iabs)(int) = &std::abs;
-	if (this->_v.size() <= 1)
-		throw ContainerEmptyException();
-	std::adjacent_difference(this->_v.begin(), this->_v.end(), std::back_inserter(tmp));
-	std::transform(tmp.begin(), tmp.end(), tmp.begin(), iabs);
-	return *min_element(tmp.begin(), tmp.end());
+	if (this->_v.size() > 1)
+	{
+		sort(this->_v.begin(), this->_v.end());
+	
+		return  (*(this->_v.end() - 1) - *this->_v.begin());
+	}
+	else
+		throw noFound ();
 }
 
-unsigned int Span::longestSpan() const
-{
-	std::vector<int> tmp;
-
-	int (*iabs)(int) = &std::abs;
-	if (this->_v.size() <= 1)
-		throw ContainerEmptyException();
-	std::adjacent_difference(this->_v.begin(), this->_v.end(), std::back_inserter(tmp));
-	std::transform(tmp.begin(), tmp.end(), tmp.begin(), iabs);
-	return *max_element(tmp.begin(), tmp.end());
-}
+std::vector<int> Span::get_v() const{ return this->_v; }

@@ -1,11 +1,6 @@
 #include <exception>
 #include <vector>
 
-struct range_t {
-    std::vector<int>::iterator begin_it;
-	std::vector<int>::iterator end_it;
-};
-
 class Span
 {
 public:
@@ -17,9 +12,9 @@ public:
 	~Span();
 
 	void addNumber(int x);
-	void addNumber(range_t& r);
-	unsigned int shortestSpan() const;
-	unsigned int longestSpan() const;
+	void addNumber(const std::vector<int>::iterator begin, const std::vector<int>::iterator end);
+	unsigned int shortestSpan();
+	unsigned int longestSpan();
 	std::vector<int> get_v() const;
 
 	class Full : public std::exception
@@ -28,15 +23,6 @@ public:
 		const char* what() const throw()
 		{
 			return ("Container full");
-		}
-	};
-
-	class Empty : public std::exception
-	{
-	public:
-		const char* what() const throw()
-		{
-			return ("Container empty");
 		}
 	};
 
